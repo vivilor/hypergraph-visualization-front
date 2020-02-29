@@ -15,6 +15,8 @@ const createTsxFileContent = (componentName, tagName) =>
 `import * as tsx from 'vue-tsx-support'
 import { CreateElement } from 'vue'
 
+import './${componentName}.scss'
+
 export const ${componentName} = tsx.component({${params.includes('f') ? '\n  functional: true,' : ''}
   name: '${componentName}',
   render: (h: CreateElement) => (

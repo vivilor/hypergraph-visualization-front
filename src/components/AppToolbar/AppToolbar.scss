@@ -1,8 +1,13 @@
 header.AppToolbar {
-  height: 232px;
-  width: 100%;
+  width: calc(100% - 8px);
+  height: 96px;
+  display: flex;
   padding: 4px;
-  background: #e1b4e2;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background: #f7ebf7;
+  align-items: flex-start;
+  justify-content: flex-start;
 
   & > *:not(:first-child) {
     margin-left: 4px;

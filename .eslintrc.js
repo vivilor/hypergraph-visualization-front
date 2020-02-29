@@ -23,7 +23,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     '@typescript-eslint/member-delimiter-style': 0,
-    '@typescript-eslint/no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 'off',
     'camelcase': 0,
     'linebreak-style': 0,
     'class-methods-use-this': 0,

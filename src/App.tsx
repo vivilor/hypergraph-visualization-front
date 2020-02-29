@@ -7,6 +7,9 @@ import { AppStatusbar } from '@/components/AppStatusbar/AppStatusbar'
 import { AppPlayground } from '@/components/AppPlayground/AppPlayground'
 import { AppToolbarSection } from '@/components/AppToolbarSection/AppToolbarSection'
 
+import './App.scss'
+import '@/styles/index.scss'
+
 export default tsx.component({
   name: 'App',
   render: (h: CreateElement) => (

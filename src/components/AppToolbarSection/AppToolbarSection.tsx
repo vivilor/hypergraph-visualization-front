@@ -1,6 +1,8 @@
 import * as tsx from 'vue-tsx-support'
 import { CreateElement, RenderContext } from 'vue'
 
+import './AppToolbarSection.scss'
+
 export const AppToolbarSection = tsx.component({
   name: 'AppToolbarSection',
   functional: true,
@@ -13,7 +15,7 @@ export const AppToolbarSection = tsx.component({
   render: (h: CreateElement, ctx: RenderContext) => (
     <section class="AppToolbarSection">
       <div class="AppToolbarSection__Tools">
-        <slot />
+        {ctx.children}
       </div>
       <header class="AppToolbarSection__Title">
         {ctx.props.title}

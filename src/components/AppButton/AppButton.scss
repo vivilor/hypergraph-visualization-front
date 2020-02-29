@@ -1,3 +1,17 @@
+@import "~@/styles/index.scss";
 
-.AppButton {}
+.AppButton {
+  height: 32px;
+  border-radius: 4px;
+
+  &--Icon {
+    width: 32px;
+  }
+  &--Text {
+    padding: 0 12px;
+  }
+  &--FullWidth {
+    width: 100%;
+  }
+}
 
