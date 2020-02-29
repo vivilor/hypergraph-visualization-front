@@ -1,0 +1,22 @@
+.AppToolbarSection {
+  background: #bf95c0;
+
+  &:hover {
+    background: #c075bf;
+  }
+
+  &__Tools {
+    padding-right: 4px;
+    padding-bottom: 4px;
+    & > * {
+      margin-left: 4px;
+      margin-top: 4px;
+    }
+  }
+  &__Title {
+    height: 32px;
+    font: 16px/32px "JetBrains Mono", "Consolas", monospace;
+    color: #130a26;
+  }
+}
+
