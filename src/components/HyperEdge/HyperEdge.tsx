@@ -1,10 +1,10 @@
-
 import * as tsx from 'vue-tsx-support'
 import { CreateElement } from 'vue'
 
-export const Hyperedge = tsx.component({
+export const HyperEdge = tsx.component({
+  name: 'HyperEdge',
+  functional: true,
   render: (h: CreateElement) => (
-    <g class="Hyperedge" />
+    <g class="HyperEdge" />
   )
 })
-

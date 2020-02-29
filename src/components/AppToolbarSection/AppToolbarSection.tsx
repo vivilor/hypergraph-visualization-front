@@ -1,11 +1,8 @@
 import * as tsx from 'vue-tsx-support'
 import { CreateElement, RenderContext } from 'vue'
 
-interface AppToolbarSectionProps {
-  title?: string
-}
-
 export const AppToolbarSection = tsx.component({
+  name: 'AppToolbarSection',
   functional: true,
   props: {
     title: {

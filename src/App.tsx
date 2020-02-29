@@ -8,6 +8,7 @@ import { AppPlayground } from '@/components/AppPlayground/AppPlayground'
 import { AppToolbarSection } from '@/components/AppToolbarSection/AppToolbarSection'
 
 export default tsx.component({
+  name: 'App',
   render: (h: CreateElement) => (
     <div class="App">
       <AppToolbar>
