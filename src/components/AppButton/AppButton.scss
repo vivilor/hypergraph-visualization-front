@@ -1,17 +1,52 @@
 @import "~@/styles/index.scss";
 
 .AppButton {
-  height: 32px;
+  @include captionFont;
+  border: 1px $clr-border solid;
+  height: 30px;
+  display: flex;
+  text-align: center;
+  align-items: center;
   border-radius: 4px;
+  justify-content: center;
+
+  &:not(&--Active):hover {
+    background: $clr-border;
+  }
+
+  &:active {
+    @include pressEffect;
+    background: $clr-active;
+  }
+
+  &--Active {
+    background: $clr-active;
+  }
+
+  &:not(&--Inactive) {
+    @include cursorPointer;
+    @include transitionFast;
+    color: $clr-text;
+  }
+
+  &--Inactive {
+    color: $clr-inactive;
+  }
 
   &--Icon {
-    width: 32px;
+    width: 30px;
   }
+
   &--Text {
     padding: 0 12px;
   }
+
   &--FullWidth {
     width: 100%;
+  }
+
+  &--FillRow {
+    flex: auto;
   }
 }
 

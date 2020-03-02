@@ -4,16 +4,13 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/essential',
-    '@vue/standard',
-    '@vue/typescript/recommended',
     'plugin:vue/base',
     'plugin:vue/essential',
-    'plugin:vue/strongly-recommended',
     'plugin:vue/recommended',
+    'plugin:vue/strongly-recommended',
   ],
   parserOptions: {
-    parser: '@typescript-eslint/parser',
+    parser: 'babel-eslint',
     ecmaVersion: 2020,
     ecmaFeatures: {
       jsx: true
@@ -22,14 +19,12 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    '@typescript-eslint/member-delimiter-style': 0,
-    '@typescript-eslint/no-unused-vars': 'off',
+    'vue/html-self-closing': 'off',
     'camelcase': 0,
     'linebreak-style': 0,
     'class-methods-use-this': 0,
     'import/prefer-default-export': 0,
-    'object-curly-spacing': 1,
-    'import/no-cycle': 1,
+    'object-curly-spacing': ['error', 'always'],
     'no-use-before-define': 1,
     'no-param-reassign': 1,
     'no-unreachable': 1,
