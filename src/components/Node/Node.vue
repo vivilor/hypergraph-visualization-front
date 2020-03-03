@@ -1,21 +1,34 @@
 <template functional>
   <g
     class="Node"
-    :data-node-id="props.node.id"
+    :data-node-id="`${props.node.id}`"
   >
-    <circle />
+    <circle
+      :r="props.node.r"
+      :cx="props.node.x"
+      :cy="props.node.y"
+      :fill="props.node.fill"
+      :stroke="props.node.stroke"
+      :stroke-width="props.node.strokeWidth"
+    />
+    <text
+      :x="props.node.x"
+      :y="props.node.y < 12 ? props.node.y + 20 : props.node.y - 8"
+      text-anchor="middle"
+      class="Node__Text"
+    >
+      {{ props.node.name }}
+    </text>
   </g>
 </template>
 
 <script>
-import { createNode } from '@/utils'
-
 export default {
   name: 'Node',
   functional: true,
   props: {
     node: {
-      type: createNode,
+      type: Object,
       required: true
     }
   }
@@ -23,5 +36,14 @@ export default {
 </script>
 
 <style lang="scss">
-.Node {}
+@import "~@/styles/index.scss";
+
+.Node {
+  @include cursorPointer;
+  &__Text {
+    @include labelFont;
+    user-select: none;
+    border: 1px solid black;
+  }
+}
 </style>

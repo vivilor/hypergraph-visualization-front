@@ -5,6 +5,14 @@ import { findItemById } from '@/store/hyperGraph/utils'
  * @typedef {Object} HyperGraphStoreModuleMutations
  */
 const mutations = {
+  /**
+   * @alias hyperGraph/CREATE_NODE
+   * @param {HyperGraphStoreModuleState} state
+   * @param {string} id
+   * @param {number} x
+   * @param {number} y
+   * @constructor
+   */
   CREATE_NODE (state, { id, x, y }) {
     state.nodes.push(createNode(id, x, y))
   },
@@ -13,8 +21,14 @@ const mutations = {
     state.edges.push(createEdge(id, nodesId))
   },
 
-  DELETE_NODE (state, id) {
+  /**
+   * @alias hyperGraph/DELETE_NODE
+   * @param {HyperGraphStoreModuleState} state hyperGraph state
+   * @param {string} id id of node to delete
+   */
+  DELETE_NODE (state, { id }) {
     const { nodes } = state
+    // console.log(nodes.indexOf(findItemById(nodes, id)))
 
     nodes.splice(nodes.indexOf(findItemById(nodes, id)), 1)
   },

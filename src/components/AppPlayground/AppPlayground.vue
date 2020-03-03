@@ -45,16 +45,13 @@ export default {
      * @param {MouseEvent} e
      */
     onClick (e) {
-      console.log(e)
-
-
       const { mode } = this.$store.state.playground
 
       switch (mode) {
-        case PlaygroundMode.CreateNode:
-          const isSvg = e.composedPath()?.find(el => el.tagName === 'svg')
+        case PlaygroundMode.CreateNode: {
+          const svg = e.composedPath()?.find(el => el.tagName === 'svg')
 
-          if (!isSvg) return
+          if (!svg) return
 
           const { top, left } = this.$refs.svg.getBoundingClientRect()
           const { x, y } = e
@@ -62,13 +59,27 @@ export default {
 
           this.$store.commit({
             type: 'hyperGraph/CREATE_NODE',
-            id: this.$store.getters['hyperGraph/newNodeId'],
+            id: this.$store.getters['hyperGraph/getNextNodeId'],
             x: x - left,
             y: y - top
           })
           break
-        case PlaygroundMode.Delete:
+        }
+        case PlaygroundMode.Delete: {
+          const g = e.composedPath()?.find(el => el.tagName === 'g')
+
+          if (!g) return
+
+          const { nodeId } = g.dataset
+
+          if (nodeId === undefined) return
+
+          this.$store.commit({
+            type: 'hyperGraph/DELETE_NODE',
+            id: nodeId
+          })
           break
+        }
         default:
           break
       }

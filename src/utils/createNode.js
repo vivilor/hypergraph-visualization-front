@@ -25,7 +25,7 @@
  */
 export const createNode = (id, x, y) => ({
   x, y, id,
-  r: 10,
+  r: 5,
   name: `Node ${id}`,
   fill: 'white',
   stroke: 'black',
