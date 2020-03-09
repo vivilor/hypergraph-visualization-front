@@ -6,22 +6,11 @@ import playground from './playground'
 
 Vue.use(Vuex)
 
-/**
- * @typedef {Object} RootStoreModuleModules
- * @property {HyperGraphStoreModule} hyperGraph
- * @property {PlaygroundStoreModule} playground
- */
-const modules = {
-  hyperGraph,
-  playground
-}
-
-/**
- * @typedef {Object} RootStoreModule
- * @property {RootStoreModuleModules} modules
- */
 const store = {
-  modules
+  modules: {
+    hyperGraph,
+    playground
+  }
 }
 
 export default new Vuex.Store(store)
